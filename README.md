@@ -278,9 +278,4 @@ This project helped in understanding:
 
 ---
 
-# 👩‍💻 Author
 
-**Somya Nagar**
-
-GitHub: https://github.com/yourusername
-LinkedIn: https://linkedin.com/in/yourprofile
