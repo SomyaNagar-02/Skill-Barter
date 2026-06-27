@@ -1,0 +1,43 @@
+
+> skillbarter-frontend@1.0.0 dev
+> vite --host 127.0.0.1
+
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m502[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+[2m2:43:50 pm[22m [36m[1m[vite][22m[39m [32m✨ new dependencies optimized: [33msocket.io-client[32m[39m
+[2m2:43:50 pm[22m [36m[1m[vite][22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[2m9:43:15 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Dashboard.jsx, /src/index.css[22m
+[2m9:43:15 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Chat.jsx, /src/index.css[22m
+[2m9:53:47 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Chat.jsx, /src/index.css[22m
+[2m9:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Layout.jsx, /src/index.css[22m
+[2m9:54:39 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Chat.jsx, /src/index.css[22m
+[2m10:08:45 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m10:08:45 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Layout.jsx, /src/index.css[22m
+[2m10:08:45 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m10:09:14 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.jsx, /src/index.css[22m
+[2m10:09:15 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SignUp.jsx, /src/index.css[22m
+[2m10:09:15 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SignIn.jsx, /src/index.css[22m
+[2m10:10:05 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Profile.jsx, /src/index.css[22m
+[2m10:10:05 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EditProfile.jsx, /src/index.css[22m
+[2m10:10:05 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Profile.jsx, /src/index.css[22m
+[2m10:11:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Dashboard.jsx, /src/index.css[22m
+[2m10:11:37 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Dashboard.jsx, /src/index.css[22m
+[2m10:11:50 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Dashboard.jsx, /src/index.css[22m
+[2m10:12:02 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Community.jsx, /src/index.css[22m
+[2m10:12:30 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Community.jsx, /src/index.css[22m
+[2m10:12:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Community.jsx, /src/index.css[22m
+[2m10:13:24 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Chat.jsx, /src/index.css[22m
+[2m10:13:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Chat.jsx, /src/index.css[22m
+[2m10:13:54 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Chat.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Layout.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SignIn.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SignUp.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EditProfile.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Profile.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Dashboard.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Community.jsx, /src/index.css[22m
+[2m10:19:19 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Chat.jsx, /src/index.css[22m
