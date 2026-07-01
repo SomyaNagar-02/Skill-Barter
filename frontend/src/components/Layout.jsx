@@ -125,7 +125,7 @@ function Layout() {
 
       <footer className='border-t border-white/10 bg-slate-950/80 py-5'>
         <div className='mx-auto max-w-7xl px-4 text-sm text-slate-500 sm:px-6 lg:px-8'>
-          Built for skill sharing with clean UX and easy navigation.
+          
         </div>
       </footer>
     </div>

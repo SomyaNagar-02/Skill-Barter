@@ -13,14 +13,7 @@ function Home() {
             <Link to='/signin' className='button-secondary'>Sign in</Link>
           </div>
         </div>
-        <div className='card-muted'>
-          <p className='section-label text-cyan-200'>Key benefits</p>
-          <ul className='mt-5 space-y-3 text-slate-300'>
-            <li>• Responsive workspace with secure auth and role-aware routing.</li>
-            <li>• Modern chat, community Q&A, and profile control.</li>
-            <li>• Consistent spacing, typography, and minimal visual noise.</li>
-          </ul>
-        </div>
+        
       </div>
     </div>
   );
