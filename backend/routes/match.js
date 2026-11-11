@@ -15,7 +15,7 @@ router.get('/', auth, async (req, res) => {
       conditions.push({ $or: [{ teachSkills: regex }, { skills: regex }] });
     }
     if (regex && filter === 'username') {
-      conditions.push({ username: regex });
+      conditions.push({ username: regex });   
     }
     if (regex && filter === 'all') {
       conditions.push({
