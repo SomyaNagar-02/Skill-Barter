@@ -77,13 +77,13 @@ function EditProfile() {
   return (
     <div className='panel max-w-4xl mx-auto'>
       <div className='mb-6'>
-        <h2 className='text-3xl font-semibold text-white'>Edit profile</h2>
+        <h2 className='text-3xl font-semibold text-[#17352f]'>Edit profile</h2>
         <p className='mt-2 section-copy'>Update your public details and keep your teach and learn skills discoverable.</p>
       </div>
       <form className='space-y-5' onSubmit={handleSubmit}>
         <div className='grid gap-5 md:grid-cols-2'>
           <label className='block'>
-            <span className='text-sm text-slate-300'>Username</span>
+            <span className='text-sm text-[#456d67]'>Username</span>
             <input
               name='username'
               value={form.username}
@@ -93,7 +93,7 @@ function EditProfile() {
             />
           </label>
           <label className='block'>
-            <span className='text-sm text-slate-300'>Phone</span>
+            <span className='text-sm text-[#456d67]'>Phone</span>
             <input
               name='phone'
               value={form.phone}
@@ -104,7 +104,7 @@ function EditProfile() {
           </label>
         </div>
         <label className='block'>
-          <span className='text-sm text-slate-300'>Gender</span>
+          <span className='text-sm text-[#456d67]'>Gender</span>
           <select
             name='gender'
             value={form.gender}
@@ -119,7 +119,7 @@ function EditProfile() {
           </select>
         </label>
         <label className='block'>
-          <span className='text-sm text-slate-300'>Bio</span>
+          <span className='text-sm text-[#456d67]'>Bio</span>
           <textarea
             name='bio'
             value={form.bio}
@@ -134,7 +134,7 @@ function EditProfile() {
             ['learnSkills', 'Skills you want to learn', 'Public speaking, SQL'],
           ].map(([field, label, placeholder]) => (
             <div key={field} className='card-muted'>
-              <span className='text-sm text-slate-300'>{label}</span>
+              <span className='text-sm text-[#456d67]'>{label}</span>
               <div className='mt-3 flex gap-2'>
                 <input
                   value={skillDrafts[field]}
@@ -151,18 +151,18 @@ function EditProfile() {
                     key={skill}
                     type='button'
                     onClick={() => removeSkill(field, skill)}
-                    className='rounded-full bg-white/10 px-3 py-1 text-sm text-slate-100 hover:bg-red-500/20 hover:text-red-100'
+                    className='rounded-full bg-[#edf5f2] px-3 py-1 text-sm text-[#1d4d43] hover:bg-red-100 hover:text-red-700'
                     title={`Remove ${skill}`}
                   >
                     {skill} x
                   </button>
-                )) : <span className='text-sm text-slate-500'>No skills added</span>}
+                )) : <span className='text-sm text-[#5d706b]'>No skills added</span>}
               </div>
             </div>
           ))}
         </div>
-        {error && <p className='rounded-2xl bg-red-500/10 px-4 py-3 text-sm text-red-200'>{error}</p>}
-        {message && <p className='rounded-2xl bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200'>{message}</p>}
+        {error && <p className='rounded-2xl bg-red-100 px-4 py-3 text-sm text-red-700'>{error}</p>}
+        {message && <p className='rounded-2xl bg-emerald-100 px-4 py-3 text-sm text-emerald-700'>{message}</p>}
         <button className='button-primary w-full'>Save changes</button>
       </form>
     </div>

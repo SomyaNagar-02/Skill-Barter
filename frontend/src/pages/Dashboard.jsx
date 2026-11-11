@@ -115,32 +115,32 @@ function Dashboard() {
 
         <div className='grid grid-cols-3 gap-3'>
           <div className='panel-compact'>
-            <p className='text-sm text-slate-400'>Credits</p>
-            <p className='mt-2 text-2xl font-semibold text-white'>{profile?.credits ?? '...'}</p>
+            <p className='text-sm text-[#5d706b]'>Credits</p>
+            <p className='mt-2 text-2xl font-semibold text-[#17352f]'>{profile?.credits ?? '...'}</p>
           </div>
           <div className='panel-compact'>
-            <p className='text-sm text-slate-400'>Rating</p>
-            <p className='mt-2 text-2xl font-semibold text-white'>{profile?.ratings ?? '...'}</p>
+            <p className='text-sm text-[#5d706b]'>Rating</p>
+            <p className='mt-2 text-2xl font-semibold text-[#17352f]'>{profile?.ratings ?? '...'}</p>
           </div>
           <div className='panel-compact'>
-            <p className='text-sm text-slate-400'>Teaching</p>
-            <p className='mt-2 text-2xl font-semibold text-white'>{(profile?.teachSkills?.length || profile?.skills?.length) ?? 0}</p>
+            <p className='text-sm text-[#5d706b]'>Teaching</p>
+            <p className='mt-2 text-2xl font-semibold text-[#17352f]'>{(profile?.teachSkills?.length || profile?.skills?.length) ?? 0}</p>
           </div>
         </div>
       </div>
 
       {(profile?.credits ?? 0) < 100 && (
-        <div className='rounded-3xl border border-amber-300/20 bg-amber-400/10 p-5 text-sm text-amber-100'>
+        <div className='rounded-3xl border border-amber-200 bg-amber-100 p-5 text-sm text-amber-800'>
           You need at least 100 credits to be taught by someone. Teach a session to earn 100 credits.
         </div>
       )}
 
-      {error && <p className='rounded-2xl bg-red-500/10 px-4 py-3 text-sm text-red-200'>{error}</p>}
-      {message && <p className='rounded-2xl bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200'>{message}</p>}
+      {error && <p className='rounded-2xl bg-red-100 px-4 py-3 text-sm text-red-700'>{error}</p>}
+      {message && <p className='rounded-2xl bg-emerald-100 px-4 py-3 text-sm text-emerald-700'>{message}</p>}
 
       <div className='grid gap-6 sm:grid-cols-2 xl:grid-cols-3'>
         {loading ? (
-          <div className='panel-compact text-slate-300'>Loading tutors...</div>
+          <div className='panel-compact text-[#456d67]'>Loading tutors...</div>
         ) : matches.length ? matches.map((match) => {
           const teachSkills = match.teachSkills?.length ? match.teachSkills : match.skills || [];
           const initials = match.username?.slice(0, 2).toUpperCase() || 'SV';
@@ -152,29 +152,29 @@ function Dashboard() {
                   {initials}
                 </div>
                 <div className='min-w-0'>
-                  <h2 className='truncate text-xl font-semibold text-white'>{match.username}</h2>
-                  <p className='mt-1 text-sm text-slate-500'>{match.ratings || 0} rating | {match.credits || 0} credits</p>
+                  <h2 className='truncate text-xl font-semibold text-[#17352f]'>{match.username}</h2>
+                  <p className='mt-1 text-sm text-[#5d706b]'>{match.ratings || 0} rating | {match.credits || 0} credits</p>
                 </div>
               </div>
-              <p className='mt-5 line-clamp-4 flex-1 text-slate-300'>{match.bio || 'Ready to exchange focused lessons and practical feedback.'}</p>
+              <p className='mt-5 line-clamp-4 flex-1 text-[#415a53]'>{match.bio || 'Ready to exchange focused lessons and practical feedback.'}</p>
               <div className='mt-5 flex flex-wrap gap-2'>
                 {teachSkills.slice(0, 4).map((skill) => (
-                  <span key={skill} className='rounded-full bg-cyan-400/10 px-3 py-1 text-sm text-cyan-100'>{skill}</span>
+                  <span key={skill} className='rounded-full bg-[#eaf4f5] px-3 py-1 text-sm text-[#1d4d43]'>{skill}</span>
                 ))}
-                {!teachSkills.length && <span className='text-sm text-slate-500'>No teach skills listed</span>}
+                {!teachSkills.length && <span className='text-sm text-[#5d706b]'>No teach skills listed</span>}
               </div>
               <button
                 type='button'
                 onClick={() => openRequestModal(match)}
                 disabled={(profile?.credits ?? 0) < 100}
-                className='mt-6 button-primary w-full disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-400'
+                className='mt-6 button-primary w-full disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500'
               >
                 {(profile?.credits ?? 0) < 100 ? 'Need 100 credits' : 'Request session'}
               </button>
             </article>
           );
         }) : (
-          <div className='panel-compact text-slate-300 sm:col-span-2 xl:col-span-3'>
+          <div className='panel-compact text-[#456d67] sm:col-span-2 xl:col-span-3'>
             No tutors found. Try a broader skill or search all matches.
           </div>
         )}
@@ -185,15 +185,15 @@ function Dashboard() {
           <form onSubmit={submitRequest} className='w-full max-w-lg panel'>
             <div className='flex items-start justify-between gap-4'>
               <div>
-                <p className='section-label text-cyan-200'>Learning request</p>
-                <h2 className='mt-2 text-2xl font-semibold text-white'>Ask {requestTutor.username}</h2>
+                <p className='section-label'>Learning request</p>
+                <h2 className='mt-2 text-2xl font-semibold text-[#17352f]'>Ask {requestTutor.username}</h2>
               </div>
-              <button type='button' onClick={() => setRequestTutor(null)} className='rounded-full border border-white/10 px-3 py-2 text-sm text-slate-300 hover:bg-white/5'>
+              <button type='button' onClick={() => setRequestTutor(null)} className='rounded-full border border-[#dfe7e2] px-3 py-2 text-sm text-[#35564f] hover:bg-[#eef4f2]'>
                 Close
               </button>
             </div>
             <label className='mt-5 block'>
-              <span className='text-sm text-slate-300'>Skill</span>
+              <span className='text-sm text-[#456d67]'>Skill</span>
               <input
                 value={requestForm.skill}
                 onChange={(event) => setRequestForm({ ...requestForm, skill: event.target.value })}
@@ -202,7 +202,7 @@ function Dashboard() {
               />
             </label>
             <label className='mt-4 block'>
-              <span className='text-sm text-slate-300'>Message</span>
+              <span className='text-sm text-[#456d67]'>Message</span>
               <textarea
                 value={requestForm.message}
                 onChange={(event) => setRequestForm({ ...requestForm, message: event.target.value })}

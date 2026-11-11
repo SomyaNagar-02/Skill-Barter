@@ -29,12 +29,12 @@ function SignUp() {
   return (
     <section className='panel max-w-xl mx-auto'>
       <div className='mb-6'>
-        <h2 className='text-3xl font-semibold text-white'>Create your account</h2>
+        <h2 className='text-3xl font-semibold text-[#17352f]'>Create your account</h2>
         <p className='mt-2 section-copy'>Join the skill marketplace and start swapping experience with others.</p>
       </div>
       <form className='space-y-5' onSubmit={handleSubmit}>
         <label className='block'>
-          <span className='text-sm text-slate-300'>Username</span>
+          <span className='text-sm text-[#456d67]'>Username</span>
           <input
             name='username'
             value={form.username}
@@ -44,7 +44,7 @@ function SignUp() {
           />
         </label>
         <label className='block'>
-          <span className='text-sm text-slate-300'>Email</span>
+          <span className='text-sm text-[#456d67]'>Email</span>
           <input
             name='email'
             type='email'
@@ -55,7 +55,7 @@ function SignUp() {
           />
         </label>
         <label className='block'>
-          <span className='text-sm text-slate-300'>Password</span>
+          <span className='text-sm text-[#456d67]'>Password</span>
           <input
             name='password'
             type='password'
@@ -65,10 +65,10 @@ function SignUp() {
             className='input-field mt-2'
           />
         </label>
-        {error && <p className='rounded-2xl bg-red-500/10 px-4 py-3 text-sm text-red-200'>{error}</p>}
+        {error && <p className='rounded-2xl bg-red-100 px-4 py-3 text-sm text-red-700'>{error}</p>}
         <button className='button-primary w-full'>Sign up</button>
       </form>
-      <p className='mt-6 text-center text-sm text-slate-400'>Already registered? <Link to='/signin' className='text-white underline'>Sign in</Link></p>
+      <p className='mt-6 text-center text-sm text-[#456d67]'>Already registered? <Link to='/signin' className='text-[#1d4d43] underline'>Sign in</Link></p>
     </section>
   );
 }

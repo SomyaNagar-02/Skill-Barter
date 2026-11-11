@@ -122,14 +122,14 @@ function Community() {
           ['Replies', stats.replies],
         ].map(([label, value]) => (
           <div key={label} className='panel-compact'>
-            <p className='text-sm text-slate-500'>{label}</p>
-            <p className='mt-2 text-3xl font-semibold text-white'>{value}</p>
+            <p className='text-sm text-[#5d706b]'>{label}</p>
+            <p className='mt-2 text-3xl font-semibold text-[#17352f]'>{value}</p>
           </div>
         ))}
       </div>
 
-      {error && <p className='rounded-2xl bg-red-500/10 px-4 py-3 text-sm text-red-200'>{error}</p>}
-      {message && <p className='rounded-2xl bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200'>{message}</p>}
+      {error && <p className='rounded-2xl bg-red-100 px-4 py-3 text-sm text-red-700'>{error}</p>}
+      {message && <p className='rounded-2xl bg-emerald-100 px-4 py-3 text-sm text-emerald-700'>{message}</p>}
 
       <div className='space-y-5'>
         {questions.length ? questions.map((question) => {
@@ -139,13 +139,13 @@ function Community() {
             <article key={question._id} className='panel transition hover:border-cyan-300/30'>
               <div className='flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between'>
                 <div className='min-w-0'>
-                  <div className='flex flex-wrap items-center gap-2 text-xs text-slate-500'>
+                  <div className='flex flex-wrap items-center gap-2 text-xs text-[#5d706b]'>
                     <span>{question.author?.username || 'Community member'}</span>
                     <span>|</span>
                     <span>{formatDate(question.createdAt)}</span>
                   </div>
-                  <h2 className='mt-3 text-2xl font-semibold text-white'>{question.title}</h2>
-                  <p className='mt-3 whitespace-pre-wrap text-slate-300'>{question.body}</p>
+                  <h2 className='mt-3 text-2xl font-semibold text-[#17352f]'>{question.title}</h2>
+                  <p className='mt-3 whitespace-pre-wrap text-[#415a53]'>{question.body}</p>
                   <div className='mt-4 flex flex-wrap gap-2'>
                     {question.tags.map((tag) => (
                       <span key={tag} className='chip'>{tag}</span>
@@ -182,26 +182,26 @@ function Community() {
                       <div key={answer._id} className='card-muted'>
                         <div className='flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between'>
                           <div>
-                            <p className='text-sm font-semibold text-white'>{answer.author?.username || 'Member'}</p>
-                            <p className='mt-1 text-xs text-slate-500'>{formatDate(answer.createdAt)}</p>
+                            <p className='text-sm font-semibold text-[#17352f]'>{answer.author?.username || 'Member'}</p>
+                            <p className='mt-1 text-xs text-[#5d706b]'>{formatDate(answer.createdAt)}</p>
                           </div>
-                          <button onClick={() => toggleUpvote(answer._id)} className={`rounded-full px-3 py-2 text-sm font-semibold transition ${upvoted ? 'bg-cyan-400 text-slate-950' : 'bg-white/10 text-slate-200 hover:bg-white/15'}`}>
+                          <button onClick={() => toggleUpvote(answer._id)} className={`rounded-full px-3 py-2 text-sm font-semibold transition ${upvoted ? 'bg-[#d9f3f0] text-[#0c463d]' : 'bg-[#edf5f2] text-[#35564f] hover:bg-[#e0f0ee]'}`}>
                             Upvote {answer.upvotes.length}
                           </button>
                         </div>
-                        <p className='mt-3 whitespace-pre-wrap text-slate-200'>{answer.body}</p>
+                        <p className='mt-3 whitespace-pre-wrap text-[#415a53]'>{answer.body}</p>
 
-                        <div className='mt-4 border-l border-white/10 pl-4'>
-                          <button onClick={() => setExpanded({ ...expanded, [answer._id]: !repliesOpen })} className='text-sm font-semibold text-cyan-200 hover:text-cyan-100'>
+                        <div className='mt-4 border-l border-[#dfe7e2] pl-4'>
+                          <button onClick={() => setExpanded({ ...expanded, [answer._id]: !repliesOpen })} className='text-sm font-semibold text-[#1d4d43] hover:text-[#17352f]'>
                             {repliesOpen ? 'Hide replies' : `Show ${answer.replies.length} replies`}
                           </button>
                           {repliesOpen && (
                             <div className='mt-3 space-y-3'>
                               {answer.replies.map((reply) => (
-                                <div key={reply._id} className='rounded-2xl bg-slate-950/80 p-3'>
-                                  <p className='text-sm font-semibold text-white'>{reply.author?.username || 'Member'}</p>
-                                  <p className='mt-1 text-sm text-slate-300'>{reply.body}</p>
-                                  <p className='mt-2 text-xs text-slate-600'>{formatDate(reply.createdAt)}</p>
+                                <div key={reply._id} className='rounded-2xl bg-[#edf5f2] p-3'>
+                                  <p className='text-sm font-semibold text-[#17352f]'>{reply.author?.username || 'Member'}</p>
+                                  <p className='mt-1 text-sm text-[#415a53]'>{reply.body}</p>
+                                  <p className='mt-2 text-xs text-[#5d706b]'>{formatDate(reply.createdAt)}</p>
                                 </div>
                               ))}
                               <div className='flex flex-col gap-2 sm:flex-row'>
@@ -221,14 +221,14 @@ function Community() {
                       </div>
                     );
                   }) : (
-                    <p className='rounded-2xl bg-slate-900/70 p-4 text-sm text-slate-500'>No answers yet. Be the first to help.</p>
+                    <p className='rounded-2xl bg-[#edf5f2] p-4 text-sm text-[#5d706b]'>No answers yet. Be the first to help.</p>
                   )}
                 </div>
               )}
             </article>
           );
         }) : (
-          <div className='rounded-3xl border border-white/10 bg-slate-950/80 p-8 text-center text-slate-400'>
+          <div className='rounded-3xl border border-[#dfe7e2] bg-[#f7f4ef] p-8 text-center text-[#5d706b]'>
             No questions yet. Start the knowledge hub with a practical question.
           </div>
         )}
@@ -239,15 +239,15 @@ function Community() {
           <form onSubmit={submitQuestion} className='w-full max-w-2xl panel'>
             <div className='flex items-start justify-between gap-4'>
               <div>
-                <p className='section-label text-cyan-200'>New question</p>
-                <h2 className='mt-2 text-2xl font-semibold text-white'>Ask the community</h2>
+                <p className='section-label'>New question</p>
+                <h2 className='mt-2 text-2xl font-semibold text-[#17352f]'>Ask the community</h2>
               </div>
-              <button type='button' onClick={() => setOpenCreate(false)} className='rounded-full border border-white/10 px-3 py-2 text-sm text-slate-300 hover:bg-white/5'>
+              <button type='button' onClick={() => setOpenCreate(false)} className='rounded-full border border-[#dfe7e2] px-3 py-2 text-sm text-[#35564f] hover:bg-[#eef4f2]'>
                 Close
               </button>
             </div>
             <label className='mt-5 block'>
-              <span className='text-sm text-slate-300'>Title</span>
+              <span className='text-sm text-[#456d67]'>Title</span>
               <input
                 value={questionForm.title}
                 onChange={(event) => setQuestionForm({ ...questionForm, title: event.target.value })}
@@ -257,7 +257,7 @@ function Community() {
               />
             </label>
             <label className='mt-4 block'>
-              <span className='text-sm text-slate-300'>Details</span>
+              <span className='text-sm text-[#456d67]'>Details</span>
               <textarea
                 value={questionForm.body}
                 onChange={(event) => setQuestionForm({ ...questionForm, body: event.target.value })}
@@ -267,7 +267,7 @@ function Community() {
               />
             </label>
             <label className='mt-4 block'>
-              <span className='text-sm text-slate-300'>Tags</span>
+              <span className='text-sm text-[#456d67]'>Tags</span>
               <input
                 value={questionForm.tags}
                 onChange={(event) => setQuestionForm({ ...questionForm, tags: event.target.value })}

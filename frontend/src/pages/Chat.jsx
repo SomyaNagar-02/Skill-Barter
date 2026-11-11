@@ -213,19 +213,19 @@ function Chat() {
         <div className='flex flex-col gap-5 md:flex-row md:items-center md:justify-between'>
           <div>
             <p className='section-label'>Workspace</p>
-            <h1 className='mt-3 text-3xl font-semibold text-white'>Skill chat</h1>
+            <h1 className='mt-3 text-3xl font-semibold text-[#17352f]'>Skill chat</h1>
             <p className='mt-2 section-copy'>Learners spend 100 credits per completed session. Teachers earn 100 credits when a session is completed.</p>
           </div>
-          <div className='rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm text-slate-300'>
-            Credits: <span className='font-semibold text-white'>{profile?.credits ?? '...'}</span>
+          <div className='rounded-2xl border border-[#dfe7e2] bg-[#f7f4ef] px-4 py-3 text-sm text-[#456d67]'>
+            Credits: <span className='font-semibold text-[#17352f]'>{profile?.credits ?? '...'}</span>
           </div>
-          <div className='flex rounded-2xl border border-white/10 bg-slate-900 p-1'>
+          <div className='flex rounded-2xl border border-[#dfe7e2] bg-[#f7f4ef] p-1'>
             {['inbox', 'requests'].map((tab) => (
               <button
                 key={tab}
                 type='button'
                 onClick={() => setActiveTab(tab)}
-                className={`relative rounded-xl px-4 py-2 text-sm font-semibold capitalize ${activeTab === tab ? 'bg-cyan-400 text-slate-950' : 'text-slate-300 hover:bg-white/5'}`}
+                className={`relative rounded-xl px-4 py-2 text-sm font-semibold capitalize ${activeTab === tab ? 'bg-[#1f4d43] text-white' : 'text-[#35564f] hover:bg-[#edf3f1]'}`}
               >
                 {tab}
                 {tab === 'requests' && pendingIncoming.length > 0 && (
@@ -239,7 +239,7 @@ function Chat() {
         </div>
       </section>
 
-      {error && <p className='rounded-2xl bg-red-500/10 px-4 py-3 text-sm text-red-200'>{error}</p>}
+      {error && <p className='rounded-2xl bg-red-100 px-4 py-3 text-sm text-red-700'>{error}</p>}
 
       <div className='grid min-h-[680px] gap-6 lg:grid-cols-[340px_1fr]'>
         <aside className='panel-compact'>
@@ -251,10 +251,10 @@ function Chat() {
                   key={conversation.user._id}
                   type='button'
                   onClick={() => setSelectedUser(conversation.user)}
-                  className={`w-full rounded-2xl p-4 text-left transition ${selectedUser?._id === conversation.user._id ? 'bg-cyan-400 text-slate-950' : 'bg-slate-900/80 text-slate-200 hover:bg-white/10'}`}
+                  className={`w-full rounded-2xl p-4 text-left transition ${selectedUser?._id === conversation.user._id ? 'bg-[#dff3f1] text-[#17352f]' : 'bg-[#edf5f2] text-[#35564f] hover:bg-[#e5f0ee]'}`}
                 >
                   <div className='flex items-center gap-3'>
-                    <div className='flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/15 font-bold'>
+                    <div className='flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#dfe7e2] font-bold text-[#17352f]'>
                       {conversation.user.username?.slice(0, 2).toUpperCase() || 'SV'}
                     </div>
                     <div className='min-w-0'>
@@ -264,7 +264,7 @@ function Chat() {
                   </div>
                 </button>
               )) : (
-                <p className='card-muted text-sm text-slate-400'>No conversations yet. Accept a request to begin.</p>
+                <p className='card-muted text-sm text-[#5d706b]'>No conversations yet. Accept a request to begin.</p>
               )}
             </div>
           ) : (
@@ -274,9 +274,9 @@ function Chat() {
                 <div className='mt-3 space-y-3'>
                   {pendingIncoming.length ? pendingIncoming.map((request) => (
                     <div key={request._id} className='card-muted'>
-                      <p className='font-semibold text-white'>{request.from.username}</p>
-                      <p className='mt-1 text-sm text-cyan-100'>{request.skill || 'Skill session'}</p>
-                      <p className='mt-2 text-sm text-slate-400'>{request.message || 'No message included.'}</p>
+                      <p className='font-semibold text-[#17352f]'>{request.from.username}</p>
+                      <p className='mt-1 text-sm text-[#1d4d43]'>{request.skill || 'Skill session'}</p>
+                      <p className='mt-2 text-sm text-[#5d706b]'>{request.message || 'No message included.'}</p>
                       <div className='mt-4 grid grid-cols-2 gap-2'>
                         <button type='button' onClick={() => handleRequestAction(request, 'accept')} className='button-primary'>
                           Accept
@@ -287,7 +287,7 @@ function Chat() {
                       </div>
                     </div>
                   )) : (
-                    <p className='card-muted text-sm text-slate-400'>No pending incoming requests.</p>
+                    <p className='card-muted text-sm text-[#5d706b]'>No pending incoming requests.</p>
                   )}
                 </div>
               </div>
@@ -295,13 +295,13 @@ function Chat() {
                 <h3 className='section-label'>Sent</h3>
                 <div className='mt-3 space-y-3'>
                   {pendingOutgoing.length ? pendingOutgoing.map((request) => (
-                    <div key={request._id} className='card-muted text-sm text-slate-300'>
-                      <p className='font-semibold text-white'>{request.to.username}</p>
+                    <div key={request._id} className='card-muted text-sm text-[#415a53]'>
+                      <p className='font-semibold text-[#17352f]'>{request.to.username}</p>
                       <p className='mt-1'>{request.skill || 'Skill session'}</p>
-                      <p className='mt-2 text-slate-500'>Waiting for response</p>
+                      <p className='mt-2 text-[#5d706b]'>Waiting for response</p>
                     </div>
                   )) : (
-                    <p className='card-muted text-sm text-slate-400'>No outgoing requests waiting.</p>
+                    <p className='card-muted text-sm text-[#5d706b]'>No outgoing requests waiting.</p>
                   )}
                 </div>
               </div>
@@ -312,14 +312,14 @@ function Chat() {
         <section className='panel flex min-h-[680px] flex-col overflow-hidden'>
           {selectedUser ? (
             <>
-              <header className='flex flex-col gap-4 border-b border-white/10 p-5 sm:flex-row sm:items-center sm:justify-between'>
+              <header className='flex flex-col gap-4 border-b border-[#dfe7e2] p-5 sm:flex-row sm:items-center sm:justify-between'>
                 <div className='flex items-center gap-3'>
                   <div className='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-fuchsia-400 font-bold text-slate-950'>
                     {selectedUser.username?.slice(0, 2).toUpperCase() || 'SV'}
                   </div>
                   <div>
-                    <h2 className='text-xl font-semibold text-white'>{selectedUser.username}</h2>
-                    <p className='text-sm text-slate-500'>{selectedUser.ratings || 0} rating</p>
+                    <h2 className='text-xl font-semibold text-[#17352f]'>{selectedUser.username}</h2>
+                    <p className='text-sm text-[#5d706b]'>{selectedUser.ratings || 0} rating</p>
                   </div>
                 </div>
                 <div className='flex flex-wrap gap-2'>
@@ -338,7 +338,7 @@ function Chat() {
 
                   return (
                     <div key={message._id} className={`flex ${mine ? 'justify-end' : 'justify-start'}`}>
-                      <div className={`max-w-[85%] rounded-3xl px-4 py-3 sm:max-w-[70%] ${mine ? 'bg-cyan-400 text-slate-950' : 'bg-slate-900 text-slate-100'}`}>
+                      <div className={`max-w-[85%] rounded-3xl px-4 py-3 sm:max-w-[70%] ${mine ? 'bg-[#d9f3f0] text-[#17352f]' : 'bg-[#edf5f2] text-[#17352f]'}`}>
                         <p className='text-xs font-semibold opacity-70'>{mine ? 'You' : message.sender?.username}</p>
                         {message.text && <p className='mt-1 whitespace-pre-wrap break-words'>{message.text}</p>}
                         {message.meetingUrl && (
@@ -347,7 +347,7 @@ function Chat() {
                           </a>
                         )}
                         {message.attachment?.dataUrl && (
-                          <a href={message.attachment.dataUrl} download={message.attachment.name} className='mt-2 block rounded-2xl bg-white/15 px-3 py-2 text-sm font-semibold'>
+                          <a href={message.attachment.dataUrl} download={message.attachment.name} className='mt-2 block rounded-2xl bg-white/60 px-3 py-2 text-sm font-semibold'>
                             {message.attachment.name}
                           </a>
                         )}
@@ -356,22 +356,22 @@ function Chat() {
                     </div>
                   );
                 }) : (
-                  <div className='flex h-full items-center justify-center text-center text-slate-500'>
+                  <div className='flex h-full items-center justify-center text-center text-[#5d706b]'>
                     Send the first message to start this skill trade.
                   </div>
                 )}
                 <div ref={bottomRef} />
               </div>
 
-              <form onSubmit={sendMessage} className='border-t border-white/10 p-4'>
+              <form onSubmit={sendMessage} className='border-t border-[#dfe7e2] p-4'>
                 {attachment && (
-                  <div className='mb-3 flex items-center justify-between gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-sm text-slate-200'>
+                  <div className='mb-3 flex items-center justify-between gap-3 rounded-2xl bg-[#edf5f2] px-4 py-3 text-sm text-[#35564f]'>
                     <span className='truncate'>{attachment.name}</span>
-                    <button type='button' onClick={() => setAttachment(null)} className='text-slate-400 hover:text-white'>Remove</button>
+                    <button type='button' onClick={() => setAttachment(null)} className='text-[#5d706b] hover:text-[#17352f]'>Remove</button>
                   </div>
                 )}
                 <div className='flex flex-col gap-3 sm:flex-row'>
-                  <label className='cursor-pointer rounded-2xl border border-white/10 px-4 py-3 text-center text-sm font-semibold text-slate-200 hover:bg-white/5'>
+                  <label className='cursor-pointer rounded-2xl border border-[#dfe7e2] px-4 py-3 text-center text-sm font-semibold text-[#35564f] hover:bg-[#edf3f1]'>
                     File
                     <input type='file' onChange={handleFileChange} className='hidden' />
                   </label>
@@ -388,7 +388,7 @@ function Chat() {
               </form>
             </>
           ) : (
-            <div className='flex flex-1 items-center justify-center p-8 text-center text-slate-500'>
+            <div className='flex flex-1 items-center justify-center p-8 text-center text-[#5d706b]'>
               Select a conversation or accept a request to open chat.
             </div>
           )}
@@ -400,26 +400,26 @@ function Chat() {
           <form onSubmit={submitCompletion} className='w-full max-w-md panel'>
             <div className='flex items-start justify-between gap-4'>
               <div>
-                <p className='section-label text-cyan-200'>Complete session</p>
-                <h2 className='mt-2 text-2xl font-semibold text-white'>Rate {selectedUser?.username}</h2>
+                <p className='section-label'>Complete session</p>
+                <h2 className='mt-2 text-2xl font-semibold text-[#17352f]'>Rate {selectedUser?.username}</h2>
                 <p className='mt-2 section-copy'>Completion transfers 100 credits from learner to teacher.</p>
               </div>
-              <button type='button' onClick={() => setCompleteOpen(false)} className='rounded-full border border-white/10 px-3 py-2 text-sm text-slate-300 hover:bg-white/5'>
+              <button type='button' onClick={() => setCompleteOpen(false)} className='rounded-full border border-[#dfe7e2] px-3 py-2 text-sm text-[#35564f] hover:bg-[#eef4f2]'>
                 Close
               </button>
             </div>
             <label className='mt-5 block'>
-              <span className='text-sm text-slate-300'>Rating</span>
+              <span className='text-sm text-[#456d67]'>Rating</span>
               <input
                 type='range'
                 min='1'
                 max='5'
                 value={rating}
                 onChange={(event) => setRating(Number(event.target.value))}
-                className='mt-4 w-full accent-cyan-400'
+                className='mt-4 w-full accent-[#1e4d43]'
               />
             </label>
-            <p className='mt-3 text-center text-4xl font-semibold text-white'>{rating}/5</p>
+            <p className='mt-3 text-center text-4xl font-semibold text-[#17352f]'>{rating}/5</p>
             <button className='button-primary w-full mt-5'>
               Complete session
             </button>

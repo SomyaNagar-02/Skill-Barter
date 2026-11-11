@@ -5,7 +5,7 @@ function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
 
   if (loading) {
-    return <div className='rounded-3xl border border-white/10 bg-slate-950/80 p-6 text-slate-300'>Loading workspace...</div>;
+    return <div className='rounded-3xl border border-[#dfe7e2] bg-[#f7f4ef] p-6 text-[#456d67]'>Loading workspace...</div>;
   }
 
   return isAuthenticated ? children : <Navigate to='/signin' replace />;

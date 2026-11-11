@@ -34,7 +34,7 @@ function Profile() {
             </div>
             <div>
               <p className='section-label'>Profile</p>
-              <h1 className='mt-3 text-3xl font-semibold text-white'>{profile?.username || 'Your profile'}</h1>
+              <h1 className='mt-3 text-3xl font-semibold text-[#17352f]'>{profile?.username || 'Your profile'}</h1>
               <p className='mt-2 max-w-2xl section-copy'>{profile?.bio || 'Add a bio so learners know how you teach and what you want to learn next.'}</p>
             </div>
           </div>
@@ -42,43 +42,43 @@ function Profile() {
         </div>
       </div>
 
-      {error && <p className='rounded-2xl bg-red-500/10 px-4 py-3 text-sm text-red-200'>{error}</p>}
+      {error && <p className='rounded-2xl bg-red-100 px-4 py-3 text-sm text-red-700'>{error}</p>}
 
       <div className='grid gap-6 sm:grid-cols-2 xl:grid-cols-4'>
         <div className='panel-compact'>
-          <p className='text-sm text-slate-400'>Credits</p>
-          <p className='mt-3 text-4xl font-semibold text-white'>{profile?.credits ?? '...'}</p>
+          <p className='text-sm text-[#5d706b]'>Credits</p>
+          <p className='mt-3 text-4xl font-semibold text-[#17352f]'>{profile?.credits ?? '...'}</p>
         </div>
         <div className='panel-compact'>
-          <p className='text-sm text-slate-400'>Rating</p>
-          <p className='mt-3 text-4xl font-semibold text-white'>{profile?.ratings ?? '...'}</p>
+          <p className='text-sm text-[#5d706b]'>Rating</p>
+          <p className='mt-3 text-4xl font-semibold text-[#17352f]'>{profile?.ratings ?? '...'}</p>
         </div>
         <div className='panel-compact'>
-          <p className='text-sm text-slate-400'>Email</p>
-          <p className='mt-3 break-words text-lg font-semibold text-white'>{profile?.email || '...'}</p>
+          <p className='text-sm text-[#5d706b]'>Email</p>
+          <p className='mt-3 break-words text-lg font-semibold text-[#17352f]'>{profile?.email || '...'}</p>
         </div>
         <div className='panel-compact'>
-          <p className='text-sm text-slate-400'>Phone</p>
-          <p className='mt-3 text-lg font-semibold text-white'>{profile?.phone || 'Not added'}</p>
-          <p className='mt-2 text-sm text-slate-500'>{profile?.gender || 'Gender not set'}</p>
+          <p className='text-sm text-[#5d706b]'>Phone</p>
+          <p className='mt-3 text-lg font-semibold text-[#17352f]'>{profile?.phone || 'Not added'}</p>
+          <p className='mt-2 text-sm text-[#5d706b]'>{profile?.gender || 'Gender not set'}</p>
         </div>
       </div>
 
       <div className='grid gap-6 lg:grid-cols-2'>
         <div className='panel-compact'>
-          <p className='section-label text-cyan-200'>Teach</p>
+          <p className='section-label'>Teach</p>
           <div className='mt-3 flex flex-wrap gap-2'>
             {teachSkills.length ? teachSkills.map((skill) => (
               <span key={skill} className='chip'>{skill}</span>
-            )) : <span className='text-slate-500'>No skills yet</span>}
+            )) : <span className='text-[#5d706b]'>No skills yet</span>}
           </div>
         </div>
         <div className='panel-compact'>
-          <p className='section-label text-fuchsia-200'>Learn</p>
+          <p className='section-label'>Learn</p>
           <div className='mt-3 flex flex-wrap gap-2'>
             {learnSkills.length ? learnSkills.map((skill) => (
-              <span key={skill} className='rounded-full bg-fuchsia-400/10 px-3 py-1 text-sm text-fuchsia-100'>{skill}</span>
-            )) : <span className='text-slate-500'>No learning goals yet</span>}
+              <span key={skill} className='rounded-full bg-[#f1e9ff] px-3 py-1 text-sm text-[#5c3a76]'>{skill}</span>
+            )) : <span className='text-[#5d706b]'>No learning goals yet</span>}
           </div>
         </div>
       </div>
